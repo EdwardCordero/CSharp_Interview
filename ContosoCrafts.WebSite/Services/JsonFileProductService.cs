@@ -21,7 +21,8 @@ namespace ContosoCrafts.WebSite.Services
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "products.json"); }
         }
 
-        public IEnumerable<Product> GetProducts()
+        // bug here
+        public Product GetProducts()
         {
             using(var jsonFileReader = File.OpenText(JsonFileName))
             {

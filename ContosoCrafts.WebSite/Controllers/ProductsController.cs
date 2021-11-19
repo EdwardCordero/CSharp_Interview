@@ -20,14 +20,10 @@ namespace ContosoCrafts.WebSite.Controllers
 
         public JsonFileProductService ProductService {get;  }
 
-        [HttpGet]
-        public IEnumerable<Product> Get()
-        {
-            return ProductService.GetProducts();
-        }
 
+        // Bug here
         [Route("Rate")]
-        [HttpGet]
+        [HttpPost]
         public ActionResult Get([FromQuery] string ProductId, [FromQuery] int Rating)
         {
             ProductService.AddRating(ProductId, Rating);
